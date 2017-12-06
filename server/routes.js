@@ -6,6 +6,7 @@ const welcomeController = require('./controllers/welcomeController')
 const bitcoinAverageController = require('./controllers/bitcoinAverageController')
 const coinDeskController = require('./controllers/coinDeskController')
 const windexController = require('./controllers/windexController')
+const newsController = require('./controllers/newsController')
 const tweetsController = require('./controllers/tweetsController')
 
 // Basic Route
@@ -26,6 +27,11 @@ routes.get('/indexes/windex/usd', windexController.getUSD)
 /// MARKETS \\\
 
 routes.get('/exchanges', bitcoinAverageController.getAll)
+
+
+/// NEWS \\\
+
+routes.get('/news', newsController.getAll)
 
 
 /// TWEETS \\\
