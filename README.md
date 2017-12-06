@@ -5,7 +5,7 @@ coiningv2-backend
 
 Coining was my final project for the Skylab Bootcamp. It's a Bitcoin news aggregator, where I got to play with __scraping__, __API's__, __NodeJS__, __MongoDB__ and more fun stuff.
 
-I decided it wasn't really finished, so I'm working on the second version. Here you can find the frontend part, made in __React__.
+I decided it wasn't really finished, so I'm working on the second version. Here you can find the backend part, made with __NodeJS, Express and MongoDB__.
 
 ## Motivation
 
