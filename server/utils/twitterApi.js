@@ -6,12 +6,11 @@ const Twitter = new twit({
 	access_token:process.env.ACCESS_TOKEN,
 	access_token_secret:process.env.ACCESS_TOKEN_SECRET
 })
-
 const twitterApi = {}
-
-twitterApi.tweetsOnKeyword = (query) => {
+ 
+twitterApi.tweetsOnKeyword = (query,count,date) => {
 	return new Promise((resolve,reject) => {
-		Twitter.get('search/tweets', {q:`${query} since:2017-12-05`,count:10},(err,data,response) => {
+		Twitter.get('search/tweets', {q:`${query} since:${date}`,count:count},(err,data,response) => {
 			if (err) 
 				throw new Error
 

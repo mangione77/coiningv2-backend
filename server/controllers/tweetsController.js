@@ -4,7 +4,9 @@ const tweetsController = {}
 
 tweetsController.getTweets = (req,res) => {
 	let query = req.params.query
-	twitterApi.tweetsOnKeyword(query)
+	let count = req.params.count
+	let date = (new Date()).toISOString().slice(0,10)
+	twitterApi.tweetsOnKeyword(query,count,date)
 		.then(data => {
 			res.json({
 				status:200,

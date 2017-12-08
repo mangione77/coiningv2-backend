@@ -2,7 +2,14 @@ const PostsDBService = require('../utils/PostsDBService')
 const newsController = {}
 
 newsController.getAll = (req,res) => {
-	PostsDBService.listPosts()
+	let limit
+	if (req.params.limit) {
+		limit = parseInt(req.params.limit)
+	}
+	else {
+		limit = 5
+	}
+	PostsDBService.listPosts(limit)
 		.then(posts => {
 			res.json({
 				status:200,

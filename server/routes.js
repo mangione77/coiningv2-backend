@@ -31,11 +31,11 @@ routes.get('/exchanges', bitcoinAverageController.getAll)
 
 /// NEWS \\\
 
-routes.get('/news', newsController.getAll)
+routes.get('/news/:limit', newsController.getAll)
 
 
 /// TWEETS \\\
 
-routes.get('/tweets/:query', tweetsController.getTweets)
+routes.get('/tweets/:query/:count', tweetsController.getTweets)
 
 module.exports = routes
