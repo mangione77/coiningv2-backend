@@ -10,7 +10,7 @@ const twitterApi = {}
  
 twitterApi.tweetsOnKeyword = (query,count,date) => {
 	return new Promise((resolve,reject) => {
-		Twitter.get('search/tweets', {q:`${query} since:${date}`,count:count},(err,data,response) => {
+		Twitter.get('search/tweets', {q:`${query} since:${date}`,count:count,lang:'es'},(err,data,response) => {
 			if (err) 
 				throw new Error
 
@@ -19,5 +19,6 @@ twitterApi.tweetsOnKeyword = (query,count,date) => {
 		})
 	})
 }
+
 
 module.exports = twitterApi

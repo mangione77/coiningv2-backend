@@ -8,11 +8,19 @@ tweetsController.getTweets = (req,res) => {
 	let date = (new Date()).toISOString().slice(0,10)
 	twitterApi.tweetsOnKeyword(query,count,date)
 		.then(data => {
-			res.json({
-				status:200,
-				data:data.statuses,
-				message:'Tweets retrieved successfully'
-			})
+			if (data.statuses.length) {
+				res.json({
+					status:200,
+					data:data.statuses,
+					message:'Tweets retrieved successfully'
+				})
+			}
+			else {
+				res.json({
+					status:404,
+					message: 'Something went wrong with your query, as a result, there are no tweets to show. Try again with another keyword'
+				})
+			}	
 		})
 		.catch(console.error)
 }
