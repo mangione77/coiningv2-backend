@@ -8,6 +8,7 @@ const coinDeskController = require('./controllers/coinDeskController')
 const windexController = require('./controllers/windexController')
 const newsController = require('./controllers/newsController')
 const tweetsController = require('./controllers/tweetsController')
+const historicalController = require('./controllers/historicalController')
 
 // Basic Route
 routes.get('/', welcomeController.get)
@@ -20,6 +21,8 @@ routes.get('/indexes/btcaverage/usd', bitcoinAverageController.getUSD)
 
 routes.get('/indexes/coindesk/eur', coinDeskController.getEUR)
 routes.get('/indexes/coindesk/usd', coinDeskController.getUSD)
+
+routes.get('/indexes/historical/month', historicalController.getData)
 
 routes.get('/indexes/windex/usd', windexController.getUSD)
 
