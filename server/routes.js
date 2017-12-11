@@ -27,6 +27,11 @@ routes.get('/indexes/historical/month', historicalController.getData)
 routes.get('/indexes/windex/usd', windexController.getUSD)
 
 
+/*
+** FINISH COIN ROUTES
+*/
+
+
 /// MARKETS \\\
 
 routes.get('/exchanges', bitcoinAverageController.getAll)
